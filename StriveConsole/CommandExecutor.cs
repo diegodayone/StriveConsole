@@ -9,9 +9,17 @@ namespace StriveConsole
     class CommandExecutor
     {
         static string executionPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        static new Stack<string> history = new Stack<string>();
+        static new Queue<string> historyReverse = new Queue<string>();
 
         public static bool Execute(string command)
         {
+            command = command.ToLower();
+            if (command != "hist" && command != "histfromstart")
+            {
+                history.Push(command);
+                historyReverse.Enqueue(command);
+            }
             //cd albums
             //commandParts = [ cd, albums ]
             //dir
@@ -21,8 +29,20 @@ namespace StriveConsole
             var commandParts = command.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             var commandName = commandParts[0]; //cd or dir or ls...
 
-            switch (commandName.ToLower())
+            switch (commandName)
             {
+                case "histfromstart":
+                    if (historyReverse.Count > 0)
+                        Console.WriteLine(historyReverse.Dequeue() + " ==> " + historyReverse.Count);
+                    else
+                        Console.WriteLine("You reached the top of your history");
+                    break;
+                case "hist":
+                    if (history.Count > 0)
+                        Console.WriteLine(history.Pop() + " ==> " + history.Count);
+                    else
+                        Console.WriteLine("You reached the top of your history");
+                    break;
                 case "dir":
                 case "ls":
                     var files = Directory.GetFiles(executionPath); //get all files

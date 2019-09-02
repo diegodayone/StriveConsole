@@ -5,6 +5,40 @@ namespace StriveConsole
 {
     class Program
     {
+        static void TripleLoop(int[] array)
+        {
+            var sum = 0; //<- 1
+            for (var i = 0; i < array.Length; i++) //N 
+                for (var j = array.Length; j >= 0; j--) //N
+                    for (var k = array.Length; k >= 0; k--) //N
+                        sum += array[i];
+
+            //O(n) = n^3
+        }
+        static void DoubleLoop(int[] array)
+        {
+            var sum = 0; //<- 1
+            for (var i = 0; i < array.Length; i++) //N 
+                for (var j = array.Length; j >= 0; j--) //N
+                    sum += array[i];
+
+            //O(n) = n^2
+        }
+        static int CalculateLength(int[] array) => array.Length; //<- 1
+        static double CalculateArrayAverage(int[] array)
+        {
+            var sum = 0; //1
+            foreach(var item in array) //N
+                sum += item;
+
+            var max = 0; //1
+            foreach(var item in array) //N
+                if (item > max) max = item;
+
+            return sum / array.Length; //1
+            //O(n) ==> 3 + 2 * N ==> N
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Strive Console");
