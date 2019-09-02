@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StriveConsole", "StriveConsole\StriveConsole.csproj", "{AE73992B-390F-420C-B93E-4767CC9D530F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE73992B-390F-420C-B93E-4767CC9D530F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE73992B-390F-420C-B93E-4767CC9D530F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE73992B-390F-420C-B93E-4767CC9D530F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE73992B-390F-420C-B93E-4767CC9D530F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC1C0DB2-E671-44F6-9DFE-58B56D794D33}
+	EndGlobalSection
+EndGlobal
